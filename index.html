@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Dungeon Crawler</title>
+
+	<style>
+		body {
+			background-image: url("public/assets/dungeonBackground.jpeg");
+		}
+
+		.legend {
+			position: absolute;
+			left: 790px;
+			top: 10px;
+			width: 200px;
+			height: 200px;
+		}
+
+		.legend .parchment {
+			width: 220px;
+			height: 260px;
+			position: absolute;
+			top: 0;
+			z-index: 0;
+		}
+
+		.text {
+			position: absolute;
+			left: 50px;
+			top: 40px;
+			z-index: 1;
+
+		}
+
+		.textTop {
+			margin-top: 0;
+		}
+
+		p {
+			margin: 10px;
+		}
+
+		.atack {
+			margin: 0;
+		}
+
+		.spaceBar {
+			width: 50px;
+			height: 15px;
+			top: 0;
+			margin: 0;
+		}
+
+		.atack .chest {
+			margin-left: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<div class="legend">
+			<img class="parchment" src="public/assets/parchment.png" alt="parchment">
+			<div class="text">
+				<p class="textTop">↑ Move up</p>
+				<p class="">← Move left</p>
+				<p class="">→ Move right </p>
+				<p class="">↓ Move down</p>
+				<div class="atack">
+					<img class="spaceBar" src="public/assets/icons/spaceBar.svg" alt="spaceBar">
+					<span class="">Atack / </span>
+					<span class="chest">Open chest</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="module" src="src/main.ts"></script>
+</body>
+
+</html>
