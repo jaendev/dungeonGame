@@ -1,47 +1,75 @@
 # Dungeon Crawler
 
-## Descripción
+A 2D adventure game built with Phaser 3 and TypeScript. Explore dungeons, fight enemies, and collect treasure.
 
-Dungeon Crawler es un juego de aventuras en 2D creado con Phaser. El juego te lleva a un mundo de fantasía donde debes explorar mazmorras, luchar contra enemigos y recolectar tesoros.
+## Features
 
-## Características
+- Playable character with animations (Faune)
+- Enemies with AI (Lizard)
+- Chest and item collection system
+- Health system with UI
+- Tile-based dungeon maps
+- Keyboard controls
 
-- Explora mazmorras generadas aleatoriamente
-- Lucha contra enemigos y jefes
-- Recolecta tesoros y objetos mágicos
-- Mejora tus habilidades y equipo
+## Controls
 
-## Cómo jugar
+| Key | Action |
+|-----|--------|
+| ↑ ↓ ← → | Move |
+| Space | Attack / Open chest |
 
-1. Abre el juego en un navegador moderno
-2. Utiliza las teclas de flecha para moverte
-3. Presiona la barra espaciadora para atacar
-4. Utiliza las teclas de flecha para seleccionar objetos y habilidades
+## Setup
 
-## Desarrollo
+```bash
+# Install dependencies
+npm install
 
-Dungeon Crawler está creado con Phaser 3 y utiliza TypeScript como lenguaje de programación. El juego utiliza una estructura de carpetas y archivos organizados para facilitar el desarrollo y la mantenibilidad.
+# Development server
+npm start
 
-## Estructura del proyecto
+# Production build
+npm run build
 
-- **public**: Carpeta que contiene los archivos estáticos del juego, como imágenes y sonidos
-- **src**: Carpeta que contiene el código fuente del juego
-  - **src/scenes**: Carpeta que contiene las escenas del juego, como la mazmorra y el menú principal
-  - **src/utils**: Carpeta que contiene utilidades y funciones auxiliares
+# Preview build
+npm run preview
+```
 
-## Licencia
+Development server runs at `http://localhost:8000`.
 
-Dungeon Crawler está licenciado bajo la licencia MIT. Puedes utilizar, modificar y distribuir el juego libremente, siempre y cuando se incluya la licencia original.
+## Project Structure
 
-## Créditos
+```
+dungeonGame/
+├── public/
+│   ├── assets/         # Backgrounds and UI icons
+│   ├── character/      # Faune sprites and atlas
+│   ├── dungeons/       # Dungeon maps (Tiled)
+│   ├── enemies/        # Enemy sprites
+│   ├── items/          # Item and chest sprites
+│   ├── tiles/          # Tilesets
+│   ├── ui/             # Hearts and UI elements
+│   ├── weapons/        # Weapon sprites
+│   └── favicon.svg
+├── src/
+│   ├── anims/          # Animation definitions
+│   ├── characters/     # Faune class (player)
+│   ├── enemies/        # Lizard class
+│   ├── events/         # EventsCenter (event bus)
+│   ├── items/          # Chest class
+│   ├── scenes/         # Game, GameUI, Preloader
+│   └── utils/          # Utilities (debug)
+├── index.html
+└── vite.config.js
+```
 
-- Brian Jaén: Desarrollador principal
-- Phaser: Framework de juego utilizado
-- TypeScript: Lenguaje de programación utilizado
+## Stack
 
-## Enlaces
+- [Phaser 3](https://phaser.io/) — game framework
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) — bundler
 
-- [Enlace al juego en línea]
-- [Enlace al repositorio en GitHub]
+## Credits
 
-Espero que disfrutes jugando a Dungeon Crawler. ¡Buena suerte en tus aventuras!
+- **Brian Jaén** — Developer
+- **[Ourcade](https://www.youtube.com/@ourcadetv)** — Tutorial and guidance
+

@@ -1,0 +1,10 @@
+name: Deploy Capture Now
+run-name: ${{ github.actor }} is deploying dungeon crawler game 🚀
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-frontend:
+    uses: ./.github/workflows/deployGame.yml

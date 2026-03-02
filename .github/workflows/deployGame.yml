@@ -1,0 +1,38 @@
+name: Deploy to server
+run-name: ${{ github.actor }} is deploying dungeon crawler game 🚀
+on:
+  workflow_call:
+    
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to production server
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/prod_key.pem
+          chmod 600 ~/prod_key.pem
+
+          # Upload dist
+          scp -r -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no -i "~/prod_key.pem" dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}/
+
+          # Cleanup key
+          rm -f ~/prod_key.pem
+
+      - run: |
+          echo "✅ Production deployment completed successfully! Status: ${{ job.status }}"
