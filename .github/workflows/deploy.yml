@@ -8,3 +8,4 @@ on:
 jobs:
   deploy-frontend:
     uses: ./.github/workflows/deployGame.yml
+    secrets: inherit

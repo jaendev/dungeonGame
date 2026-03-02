@@ -23,13 +23,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Debug secrets
-        run: |
-          echo "PORT: ${{ secrets.SSH_PORT }}"
-          echo "HOST: ${{ secrets.SSH_HOST }}"
-          echo "USER: ${{ secrets.SSH_USER }}"
-          echo "PATH: ${{ secrets.SSH_PATH }}"
-
       - name: Deploy to production server
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/prod_key.pem
